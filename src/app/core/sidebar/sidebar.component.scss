@@ -1,0 +1,40 @@
+.app-sidebar_icon__bed {
+    &:before {
+        background: url(../../../assets/img/building.svg) no-repeat;
+        background-position: 52%;
+        background-size: 51px 37px, 0 0;
+        content: "";
+        min-height: 36px;
+        width: 56px;
+        right: auto;
+        top: 9px;
+        position: absolute;
+    }
+}
+
+.app-sidebar_icon__plus {
+    &:before {
+        background: url(../../../assets/img/plus-icon.svg) no-repeat;
+        background-position: 56%;
+        background-size: 49px 36px, 0 0;
+        content: "";
+        min-height: 36px;
+        width: 57px;
+        right: auto;
+        top: 9px;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .app-sidebar_icon__plus {
+        a {
+            width: 50%;
+            text-align: center;
+        }
+
+        &:before {
+            top: -9px;
+        }
+    }
+}

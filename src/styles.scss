@@ -1,0 +1,192 @@
+/*!
+ =========================================================
+ * Viva Real - V1
+ * author: Antonio Castanheira
+ =========================================================
+ */
+
+// Variables
+$azure: #00acff;
+$water-blue: #1190cd;
+$twilight-blue: #094e6e;
+$white-three: #fafafa;
+$white-four: #ffffff;
+$white-five: #f9f9f9;
+$white-six: #f1f1f1;
+$black-four: #BBBBBB;
+$black-five: #A2A2A2;
+$black-six: #858585;
+$black-nine: #484848;
+$default-radius: 2px;
+
+body {
+    background-color: $white-six;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+fieldset {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1, p {
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    border-radius: 2px;
+    height: 36px;
+    width: 100%;
+    background-color: #ffffff;
+    border: solid 1px #979797;
+}
+
+.btn {
+    background-color: $azure;
+    color: $white-three;
+    font-size: 1rem;
+    padding: 8px 9px;
+    border: none;
+    border-radius: 2px;
+    box-shadow: inset 0 -1px 0 0 $black-five;
+    transition: background .2s linear,color .2s linear;
+
+    &:hover {
+        background-color: $water-blue;
+    }
+
+    &:disabled {
+        opacity: .5;
+        cursor: not-allowed;
+    }
+}
+
+.site-box {
+    display: grid;
+    width: 100%;
+    grid-gap: 0px;
+    grid-template-columns: 11% 89%;
+    grid-template-areas: "logo header" "aside content";
+}
+
+.site-header__brand {
+    height: 50px;
+}
+
+.header__container {
+    grid-area: logo;
+    padding: 10px;
+    background-color: $azure;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_title {
+    color: $white-three;
+    font-size: 1rem;
+}
+
+header {
+    grid-area: header;
+    background-color: $water-blue;
+    padding: 10px 26px;
+    display: flex;
+    align-items: center;
+}
+
+aside {
+    grid-area: aside;
+    background-color: $twilight-blue;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.site_main {
+    grid-area: content;
+    background-color: $white-six;
+    display: grid;
+    padding: 20px;
+    grid-column-gap: 20px;
+    grid-template-columns: 25% 1fr;
+    grid-template-areas: "filters main";
+}
+
+.main_filters {
+    grid-area: filters;
+    background-color: $white-five;
+    border-radius: 2px;
+    padding: 13px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+}
+
+.main_results {
+    grid-area: main;
+    border-radius: 2px;
+    padding: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    background-color: $white-four;
+}
+
+.app-sidebar_menu {
+    margin: 10px 0px;
+    padding: 0px;
+    position: relative;
+
+    li {
+        padding: 6px;
+        position: relative;
+        color: $white-four;
+        width: 91px;
+        height: 63px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        &:hover {
+            background-color: $azure;
+        }
+    }
+}
+
+.app-sidebar_link {
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+    .main_filters {
+        display: none;
+    }
+
+    .site-header__brand {
+        height: 36px;
+    }
+
+    .site_main {
+        padding: 0px;
+        grid-template-columns: 1fr;
+        grid-template-areas: "main main";
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .site-box {
+        grid-template-columns: 20% 80%;
+    }
+
+    .site-header__brand {
+        height: 26px;
+    }
+}

@@ -1,0 +1,30 @@
+@import "../../../../styles";
+
+.filters__title {
+    color: #7E7E7E;
+    font: 0.9rem;
+}
+
+.form_label {
+    color: $black-five;
+    font-size: 0.8rem;
+}
+
+.filter-row {
+    display: grid;
+    grid-template-columns: 46% 46%;
+    grid-template-rows: 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 2px;
+    margin-bottom: 15px;
+}
+
+.filter_body {
+    margin-top: 15px;
+}
+
+.filter-line {
+    margin-left: -13px;
+    margin-right: -13px;
+    // border-bottom: solid 0.5px #979797;
+}

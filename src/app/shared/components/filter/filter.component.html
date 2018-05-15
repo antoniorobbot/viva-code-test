@@ -1,0 +1,30 @@
+<fieldset>
+    <label class="filters__title" for="filters">Filtrar</label>
+    <div class="filter_body">
+        <div class="filter-row">
+            <label class="form_label" for="codeInput"> ID</label>
+            <label class="form_label" for="squareMetersInput"> Área</label>
+            <input type="number" id="codeInput" [(ngModel)]="code" (ngModelChange)="updateFilters()">
+            <input type="number" id="squareMetersInput" [(ngModel)]="squareMeters" (ngModelChange)="updateFilters()">
+        </div>
+
+        <hr class="filter-line">
+
+        <div class="filter-row">
+            <label class="form_label" for="bedsInput"> Quartos</label>
+            <label class="form_label" for="bathsInput"> Banheiros</label>
+            <input type="number" id="bedsInput" [(ngModel)]="beds" (ngModelChange)="updateFilters()">
+            <input type="number" id="bathsInput" [(ngModel)]="baths" (ngModelChange)="updateFilters()">
+        </div>
+        <hr class="filter-line">
+
+
+        <div class="filter-row">
+            <label class="form_label" for="minPriceInput"> Valor</label>
+            <label class="form_label" for="maxPriceInput"> </label>
+            <input type="number" placeholder="Mínimo" id="minPriceInput" [(ngModel)]="minPrice" (ngModelChange)="updateFilters()">
+            <input type="number" placeholder="Máximo" id="maxPriceInput" [(ngModel)]="maxPrice" (ngModelChange)="updateFilters()">
+        </div>
+
+    </div>
+</fieldset>

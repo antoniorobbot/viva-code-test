@@ -1,0 +1,136 @@
+@import "../../../styles";
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.property-card {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26);
+    margin-bottom: 18px;
+}
+
+.result-figure {
+    position: relative;
+    margin: 0px;
+}
+
+.result-content {
+    padding: 14px;
+}
+
+.result-property__price {
+    position: absolute;
+    font-size: 1.7rem;
+    left: 16px;
+    bottom: 21px;
+    color: #fff;
+    text-rendering: optimizelegibility;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+.result-property__title {
+    font-size: 1.3rem;
+    color: $black-nine;
+}
+
+.result-property__description {
+    font-size: 0.9rem;
+    color: $black-four;
+}
+
+.result-property__code {
+    background-color: transparent;
+    border-radius: 2px;
+    border: 1px solid $black-four;
+    color: $black-five;
+    padding: 0 5px;
+}
+
+.result-footer {
+    background-color: $white-three;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-property__list-options {
+    display: inline;
+    margin-top: 24px;
+    margin-bottom: 0px;
+    padding: 0px;
+
+    li {
+        display: inline;
+        position: relative;
+        margin-left: 10px;
+        color: $black-five;
+    }
+}
+
+.result-property__squareMeters {
+    &:before {
+        background: url(../../../assets/img/ic-card-area.svg) no-repeat;
+        background-size: 20px 20px, 0 0;
+        content: "";
+        min-height: 21px;
+        width: 49px;
+        right: auto;
+        position: absolute;
+        bottom: 21px;
+        left: 20px;
+    }
+}
+
+.result-property__beds {
+    &:before {
+        background: url(../../../assets/img/ic-card-beds.svg) no-repeat;
+        background-size: 20px 20px, 0 0;
+        content: "";
+        min-height: 21px;
+        width: 49px;
+        right: auto;
+        position: absolute;
+        bottom: 21px;
+        left: 20px;
+    }
+}
+
+.result-property__baths {
+    &:before {
+        background: url(../../../assets/img/ic-card-bathroom.svg) no-repeat;
+        background-size: 20px 20px, 0 0;
+        content: "";
+        min-height: 21px;
+        width: 49px;
+        right: auto;
+        position: absolute;
+        bottom: 21px;
+        left: 20px;
+    }
+}
+
+.footer-pagination {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 560px) {
+    .property-card {
+        grid-template-columns: 1fr;
+    }
+
+    .result-footer {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 8px;
+    }
+}

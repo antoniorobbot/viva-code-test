@@ -1,0 +1,63 @@
+<div class="site_main">
+  <div class="main_filters">
+    <app-filter (filterUpdated)="filterUpdated($event)">
+    </app-filter>
+  </div>
+
+  <section class="main_results">
+    <content-loader *ngIf="isLoading">
+      <svg:rect x="0" y="0" rx="0" ry="0" width="150" height="90" />
+      <svg:rect x="160" y="0" rx="0" ry="0" width="1000" height="10" />
+      <svg:rect x="160" y="20" rx="0" ry="0" width="1000" height="10" />
+      <svg:rect x="160" y="40" rx="0" ry="0" width="1000" height="10" />
+      <svg:rect x="160" y="60" rx="0" ry="0" width="1000" height="10" />
+      <svg:rect x="160" y="80" rx="0" ry="0" width="1000" height="10" />
+    </content-loader>
+
+    <content-loader *ngIf="isLoading">
+      <svg:rect x="0" y="0" rx="0" ry="0" width="150" height="90" />
+      <svg:rect x="160" y="0" rx="0" ry="0" width="1000" height="10" />
+      <svg:rect x="160" y="20" rx="0" ry="0" width="1000" height="10" />
+      <svg:rect x="160" y="40" rx="0" ry="0" width="1000" height="10" />
+      <svg:rect x="160" y="60" rx="0" ry="0" width="1000" height="10" />
+      <svg:rect x="160" y="80" rx="0" ry="0" width="1000" height="10" />
+    </content-loader>
+
+    <div *ngIf="!isLoading">
+      <section id="properties-list" *ngFor="let propertie of properties">
+        <article class="property-card">
+          <figure class="result-figure">
+            <img [src]="propertie.photo ? propertie.photo : '../assets/img/no-photo.png'" alt="{{propertie?.description}}" width="304"
+              height="228">
+            <p class="result-property__price">{{propertie?.price | currency:'R$':true:"1.0-2"}}</p>
+          </figure>
+          <div>
+            <div class="result-content">
+              <span class="result-property__code">ID. {{propertie?.id}}</span>
+              <h2 class="result-property__title">
+                {{propertie?.title}}
+              </h2>
+              <div>
+                <p class="result-property__description">{{propertie?.description}}</p>
+              </div>
+            </div>
+            <div class="result-footer">
+              <ul class="result-property__list-options">
+                <li class="result-property__squareMeters"> {{propertie?.squareMeters}} M²</li>
+                <li class="result-property__beds"> {{propertie?.beds}} {{propertie?.beds === 1 ? ' quarto' : ' quartos'}}</li>
+                <li class="result-property__baths"> {{propertie?.baths}} {{propertie?.baths === 1 ? ' banheiro' : ' banheiros'}}</li>
+              </ul>
+              <button class="btn">VISUALIZAR ANÚNCIO</button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <div *ngIf="properties?.length > 1 && !isLoading" class="footer-pagination">
+      <button class="btn" [disabled]="page === 1 || pageLimit === (page - 1)" (click)="previousPage()"> Anterior </button>
+      <button class="btn" [disabled]="pageLimit === (page + 1)" (click)="nextPage()"> Próxima </button>
+    </div>
+  </section>
+
+</div>
